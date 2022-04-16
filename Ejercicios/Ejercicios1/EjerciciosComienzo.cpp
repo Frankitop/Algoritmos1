@@ -206,7 +206,6 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr) {
     if (vecStr == NULL) return NULL;
     else {
         char** vecOrdenado = copiarVecStrings(vecStr, largoVecStr);
-        
         // recorrer vecOrcenado
         for (int i = 0; i < largoVecStr-1; i++) {
             for (int j = i+1; j < largoVecStr; j++) {
@@ -224,13 +223,49 @@ char **ordenarVecStrings(char **vecStr, int largoVecStr) {
 
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
 	// IMPLEMENTAR SOLUCION
-	return NULL;
+    if (v1 == NULL && v2 == NULL) return NULL;
+    else {
+        int* res = new int[l1 + l2];
+        res[l1+l2-1] = '\0';
+        int pos1 = 0;
+        int pos2 = 0;
+        int pos = 0;
+        
+        while (pos1 < l1 && pos2 < l2) {
+            if (v1[pos1] <= v2[pos2]) {
+                res[pos] = v1[pos1];
+                pos1++;
+            } else {
+                res[pos] = v2[pos2];
+                pos2++;
+            }
+            pos++;
+        }
+        if (pos2 < l2) {
+            while (pos2 < l2) {
+                res[pos] = v2[pos2];
+                pos2++;
+                pos++;
+            }
+        } else if (pos1 < l1) {
+            while (pos1 < l1) {
+                res[pos] = v1[pos1];
+                pos1++;
+                pos++;
+            }
+        }
+        return res;
+    }
 }
 
-bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
-{
+bool subconjuntoVector(int* v1, int* v2, int l1, int l2) {
 	// IMPLEMENTAR SOLUCION
-	return false;
+    bool esSubConjunto = false;
+    if (v1 == NULL) return true;
+    else {
+        
+    }
+	return esSubConjunto;
 }
 
 char** splitStr(char* str, char separador, int &largoRet)
