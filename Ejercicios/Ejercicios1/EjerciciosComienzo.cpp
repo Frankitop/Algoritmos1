@@ -262,10 +262,8 @@ bool subconjuntoVector(int* v1, int* v2, int l1, int l2) {
 	// IMPLEMENTAR SOLUCION
     bool esSubConjunto = false;
     if (v1 == NULL) return true;
-    else {
-        
-    }
-	return esSubConjunto;
+    
+    return esSubConjunto;
 }
 
 char** splitStr(char* str, char separador, int &largoRet)
