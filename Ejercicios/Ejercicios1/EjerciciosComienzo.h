@@ -187,7 +187,7 @@ POS: Retorna un nuevo vector ordenado con los elementos de v1 y v2.
 
 Ejemplo
 Entrada: [1,3,5,6], [2,3,4], 4, 3
-Resultado: [1,2,3,3,4,5,6]
+Resultado: [1,2,3,3,4,5,6]  
 */
 int* intercalarVector(int* v1, int* v2, int l1, int l2);
 

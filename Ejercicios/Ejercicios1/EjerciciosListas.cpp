@@ -1,14 +1,42 @@
 #include "EjerciciosListas.h"
 
-NodoLista* invertirParcial(NodoLista* l) 
-{
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+// **** INICIO Funciones Auxiliares ****
+void insertComienzo(NodoLista *&l, int e) {
+    NodoLista* nuevo = new NodoLista;
+    nuevo->dato = e;
+    nuevo->sig = l;
+    l = nuevo;
+}
+void insertFin(NodoLista*& l, int e) {
+    if (l == NULL) {
+        insertComienzo(l, e);
+    }
+    else
+        insertFin(l->sig,e);
 }
 
-void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) 
-{
+// ****   FIN Funciones Auxiliares  ****
+
+NodoLista* invertirParcial(NodoLista* l) {
+    // IMPLEMENTAR SOLUCION
+    NodoLista* aux;
+    NodoLista* inv = NULL;
+    while (l->sig != NULL) {
+        aux = new NodoLista;
+        aux->dato = l->dato;
+        aux-> sig = inv;
+        inv = aux;
+        l = l->sig;
+    }
+    return inv;
+}
+
+void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) {
 	// IMPLEMENTAR SOLUCION
+    if (lista != NULL) {
+        
+    }
+    
 }
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
